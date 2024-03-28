@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  frontend:
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    container_name: janken-front
+    tty: true
+    volumes:
+      - .:/app
+      # - node_modules:/app/frontend/node_modules
+    ports:
+      - 5173:5173
+    command: yarn dev
+
+  aws:
+    build:
+      context: ./aws/
+      dockerfile: Dockerfile
+    container_name: janken-aws
+    ports:
+      - 8080:8080
+    tty: true
+    volumes:
+      - .:/app/aws
+
+  gcp:
+    build:
+      context: ./gcp/
+      dockerfile: Dockerfile
+    container_name: janken-gcp
+    ports:
+      - 8081:8081
+    tty: true
+    volumes:
+      - .:/app
