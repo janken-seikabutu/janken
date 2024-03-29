@@ -14,17 +14,6 @@ services:
       - 5173:5173
     command: yarn dev
 
-  aws:
-    build:
-      context: ./aws/
-      dockerfile: Dockerfile
-    container_name: janken-aws
-    ports:
-      - 8080:8080
-    tty: true
-    volumes:
-      - .:/app/aws
-
   gcp:
     build:
       context: ./gcp/
