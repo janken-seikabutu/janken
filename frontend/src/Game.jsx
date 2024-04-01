@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 const Game = () => {
   const [userHandPath, setUserHandPath] =  useState("")
@@ -42,7 +43,7 @@ const Game = () => {
       }
     }
     console.log(userName,hand,gameResult,previousId,markovId)
-    const res = await fetch("http://localhost:8081/game/1",{
+    const res = await fetch("https://gcp-dfj76wznba-an.a.run.app/game/1",{
       method: "POST",
       headers: {
 				"Content-Type": "application/json",
@@ -86,7 +87,8 @@ const Game = () => {
         <button onClick={() => jankenGame("c")}>チョキ</button>
         <button onClick={() => jankenGame("p")}>パー</button>
       </div>
-     
+
+      <Link to="/">ホームに戻る</Link>
     </>
   )
 }

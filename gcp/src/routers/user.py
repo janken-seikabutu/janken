@@ -62,7 +62,7 @@ def register_user(user:User):
       }
     )
     return {"name":user.name, "markov_id":0, "game_count":0, "previous_id":0}
-  return {"error","そのユーザーはすでに登録されています。別のユーザー名で登録してください。"}
+  return {"error":"そのユーザーはすでに登録されています。別のユーザー名で登録してください。"}
 
 @router.post("/user/login")
 def login_user(user:User):
@@ -79,5 +79,5 @@ def login_user(user:User):
       previous_id = result["Items"][0]["previous_id"]
       return {"name":user.name, "markov_id":markov_id, "game_count":game_count, "previous_id":previous_id}
     else:
-      return {"error","パスワードが間違っています。"}
-  return {"error","ユーザー名が間違っています。登録したユーザー名を入力してください。登録がまだの場合はユーザー登録をしてください。"}
+      return {"error":"パスワードが間違っています。"}
+  return {"error":"ユーザー名が間違っています。登録したユーザー名を入力してください。登録がまだの場合はユーザー登録をしてください。"}

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 const Markov = () => {
   const [userHandPath, setUserHandPath] =  useState("")
@@ -7,7 +8,7 @@ const Markov = () => {
   const previousId = localStorage.getItem("previous_id")
   const markovId = localStorage.getItem("markov_id")
   const jankenGame = async(hand) => {
-    const res = await fetch("http://localhost:8081/game/2",{
+    const res = await fetch("https://gcp-dfj76wznba-an.a.run.app/game/2",{
       method: "POST",
       headers: {
 				"Content-Type": "application/json",
@@ -51,7 +52,7 @@ const Markov = () => {
         <button onClick={() => jankenGame("c")}>チョキ</button>
         <button onClick={() => jankenGame("p")}>パー</button>
       </div>
-     
+      <Link to="/">ホームに戻る</Link>
     </>
   )
 }
