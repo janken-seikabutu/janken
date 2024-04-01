@@ -42,7 +42,7 @@ const Markov = () => {
       <div>自分の手</div>
       {userHandPath !== "" ?
       <>
-        <img src={userHandPath} className="w-64"></img>
+        <img src={userHandPath} className="w-64" />
       </>
       :
       <></>
