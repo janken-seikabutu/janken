@@ -25,8 +25,8 @@ const Markov = () => {
       console.log(data)
       localStorage.setItem("game_count", data["game_count"]);
       localStorage.setItem("previous_id", data["previous_id"]);
-      setImagePath("../../public/" + data["hand_ai"] + ".jpg")
-      setUserHandPath("../../public/" + hand + ".jpg")
+      setImagePath("../../public/" + data["hand_ai"] + ".JPG")
+      setUserHandPath("../../public/" + hand + ".JPG")
     }
   }
   return (
