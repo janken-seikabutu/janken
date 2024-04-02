@@ -12,8 +12,8 @@ const Game = () => {
   const jankenGame = async(hand) => {
     const aiRandomChoise = hands[Math.floor(Math.random() * hands.length)]
     setAiHand(aiRandomChoise)
-    setImagePath("../../public/" + aiRandomChoise + ".JPG")
-    setUserHandPath("../../public/" + hand + ".JPG")
+    setImagePath("/images/" + aiRandomChoise + ".JPG")
+    setUserHandPath("/images/" + hand + ".JPG")
     let gameResult = ""
     if (hand == aiHand){
       gameResult = "d"
